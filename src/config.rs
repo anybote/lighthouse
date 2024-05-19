@@ -15,10 +15,8 @@ pub struct ContentConfig {
 
 impl ContentConfig {
     pub fn read() -> ContentConfig {
-        let contents = fs::read_to_string(CONTENT_CONFIG_FILE_PATH).expect(&format!(
-            "content config file not found at {}",
-            CONTENT_CONFIG_FILE_PATH
-        ));
+        let contents = fs::read_to_string(CONTENT_CONFIG_FILE_PATH).unwrap_or_else(|_| panic!("content config file not found at {}",
+            CONTENT_CONFIG_FILE_PATH));
 
         toml::from_str(&contents).expect("unable to parse content config file")
     }
@@ -41,10 +39,8 @@ pub struct ImageMetadatum {
 
 impl ImageConfig {
     pub fn read() -> ImageConfig {
-        let contents = fs::read_to_string(IMAGE_METADATA_FILE_PATH).expect(&format!(
-            "image metadata file not found at {}",
-            IMAGE_METADATA_FILE_PATH
-        ));
+        let contents = fs::read_to_string(IMAGE_METADATA_FILE_PATH).unwrap_or_else(|_| panic!("image metadata file not found at {}",
+            IMAGE_METADATA_FILE_PATH));
 
         toml::from_str(&contents).expect("unable to parse image metadata file")
     }
@@ -58,10 +54,8 @@ pub struct ServerConfig {
 
 impl ServerConfig {
     pub fn read() -> ServerConfig {
-        let contents = fs::read_to_string(SERVER_CONFIG_FILE_PATH).expect(&format!(
-            "server config file not found at {}",
-            SERVER_CONFIG_FILE_PATH
-        ));
+        let contents = fs::read_to_string(SERVER_CONFIG_FILE_PATH).unwrap_or_else(|_| panic!("server config file not found at {}",
+            SERVER_CONFIG_FILE_PATH));
 
         toml::from_str(&contents).expect("unable to parse server config file")
     }

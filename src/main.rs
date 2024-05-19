@@ -22,10 +22,8 @@ async fn main() {
     // init logger
     let subscriber = Registry::default()
         .with(LevelFilter::from_level(
-            Level::from_str(&server_config.logging_level).expect(&format!(
-                "enable to parse logging level {}",
-                &server_config.logging_level
-            )),
+            Level::from_str(&server_config.logging_level).unwrap_or_else(|_| panic!("enable to parse logging level {}",
+                &server_config.logging_level)),
         ))
         .with(tracing_subscriber::fmt::Layer::default().with_writer(std::io::stdout));
     tracing::subscriber::set_global_default(subscriber).expect("Failed to set subscriber");
