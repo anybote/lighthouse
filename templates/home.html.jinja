@@ -1,0 +1,18 @@
+{%- import "images.html.jinja" as images -%}
+
+{% extends "base.html.jinja" %}
+
+{% block body %}
+<div class="col-start-2 col-span-2">
+    <a href="/"
+       class="text-3xl font-light text-pink-300">
+        {{ header }}
+    </a>
+    <p>{{ subheader }}</p>
+</div>
+{% call images::image_page(0, image_metadata, false) %}
+{% endblock %}
+
+{% block footer %}
+<div id="footer"></div>
+{% endblock %}

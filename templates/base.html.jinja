@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script src="https://unpkg.com/htmx.org@1.9.12"
+                integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+                crossorigin="anonymous"></script>
+        <link href="./assets/styles/output.css"
+              rel="stylesheet">
+        <title>{{ title }}</title>
+    </head>
+    <body class="min-h-screen bg-old-lace">
+        <div class="grid grid-cols-1 justify-items-center">
+            <div class="grid grid-cols-4 gap-4 m-6 max-w-screen-2xl">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        {% block footer %}{% endblock %}
+    </body>
+</html>

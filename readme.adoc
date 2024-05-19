@@ -1,0 +1,65 @@
+:showtitle:
+:toc: left
+:icons: font
+
+= Lighthouse
+
+Lighthouse is a lightweight home for your images.
+
+== How to install
+
+=== With Docker
+
+==== Preflight
+1. install docker via https://docs.docker.com/get-docker/[get docker]
+2. download the "demo" folder
+3. add your own images under the `assets/img` directory
+4. modify the config in the `assets/config` directory, the most important being `assets/config/images`. see <<about_image_config>> for more information.
+
+==== Run
+1. while in the demo directory, run `docker compose up`
+
+=== Without Docker
+
+==== Preflight
+1. install rust via https://www.rust-lang.org/tools/install[rustup]
+2. clone this repository
+3. add your own images under the `assets/img` directory
+4. modify the config in the `assets/config` directory, the most important being `assets/config/images`. see <<about_image_config>> for more information.
+
+==== Run
+1. while in the project root directory, run `cargo run -r`
+
+=== About `config/images` [[about_image_config]]
+
+The file `assets/config/images.toml` is used to tell Lighthouse how you want to display your images. The fields are:
+
+* file: specifies the file name of the image in the folder `assets/img`
+* alt: the alt text to be used on the image, for screen readers etc.
+* start: the column the image starts in
+* end: the column the image ends in
+
+Lighthouse will arrange your images in the order they're listed in the file, with the arrangement specified in the start and end values. Using non-overlapping start and end values allows you to set more than one image per-row.
+
+==== Example
+
+[source,toml]
+----
+[[images]]
+file = "bee.jpg"
+alt = "a bee resting on a flower"
+start = 1
+end = 5
+
+[[images]]
+file = "boat.jpg"
+alt = "a green boat on the water, shot through a window pane"
+start = 1
+end = 3
+
+[[images]]
+file = "cart.jpg"
+alt = "a blue cart parked on the side of the street"
+start = 3
+end = 5
+----

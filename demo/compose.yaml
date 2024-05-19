@@ -1,0 +1,9 @@
+services:
+  web:
+    image: lighthouse:latest
+    volumes:
+      - ./assets/config:/opt/lighthouse/assets/config
+      - ./assets/img:/opt/lighthouse/assets/img
+    ports: 
+      - 3000:3000
+  

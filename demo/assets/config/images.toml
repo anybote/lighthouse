@@ -1,0 +1,53 @@
+[[images]]
+file = "bee.jpg"
+alt = "a bee resting on a flower"
+start = 1
+end = 5
+
+[[images]]
+file = "boat.jpg"
+alt = "a green boat on the water, shot through a window pane"
+start = 1
+end = 3
+
+[[images]]
+file = "cart.jpg"
+alt = "a blue cart parked on the side of the street"
+start = 3
+end = 5
+
+[[images]]
+file = "field.jpg"
+alt = "a field of yellow, orange, and white flowers"
+start = 2
+end = 4
+
+[[images]]
+file = "flower.jpg"
+alt = "a close shot of a red flower"
+start = 2
+end = 4
+
+[[images]]
+file = "mail.jpg"
+alt = "old rusted mail boxes"
+start = 2
+end = 4
+
+[[images]]
+file = "shops.jpg"
+alt = "layers of shops in a building"
+start = 2
+end = 4
+
+[[images]]
+file = "street.jpg"
+alt = "a street with signs"
+start = 2
+end = 4
+
+[[images]]
+file = "truck.jpg"
+alt = "a yellow truck with in the shadow from a tree"
+start = 2
+end = 4

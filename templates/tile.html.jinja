@@ -1,0 +1,8 @@
+{%- import "footer.html.jinja" as footer -%}
+{%- import "images.html.jinja" as images -%}
+
+{% call images::image_page(page_index, image_metadata, is_final_page) %}
+
+{% if is_final_page %}
+{% call footer::footer_content %}
+{% endif %}

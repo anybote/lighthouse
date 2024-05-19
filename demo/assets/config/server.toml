@@ -1,0 +1,2 @@
+# configure server port in the docker compose file
+logging_level = "DEBUG"

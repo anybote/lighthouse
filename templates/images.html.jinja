@@ -1,0 +1,17 @@
+{% macro image_page(page_index, image_metadata, is_final_page) %}
+{% for image in image_metadata %}
+<div class="col-start-{{ image.start }} col-end-{{ image.end }} bg-champagne-pink">
+    <img class="transition duration-1000 opacity-0"
+         onload="this.style.opacity=1"
+         src="/assets/img/{{ image.file }}"
+         alt={{ image.alt }}
+         {% if loop.last && !is_final_page %}
+         hx-get="/img/{{ page_index + 1 }}"
+         hx-trigger="revealed"
+         hx-swap="outerHTML"
+         hx-target="#target-div-{{ page_index }}"
+         {% endif %} />
+</div>
+{% endfor %}
+<div id="target-div-{{ page_index }}"></div>
+{% endmacro %}
