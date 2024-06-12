@@ -4,8 +4,8 @@ WORKDIR /tmp/lighthouse
 RUN apk add musl-dev
 RUN cargo build --release
 
-FROM alpine:3.19 AS runner
-COPY --from=builder /tmp/lighthouse/assets/styles /opt/lighthouse/assets/styles
-COPY --from=builder /tmp/lighthouse/target/release/lighthouse /opt/lighthouse/lighthouse
-COPY --from=builder /tmp/lighthouse/templates /opt/lighthouse/templates
-ENTRYPOINT cd /opt/lighthouse && ./lighthouse
+FROM scratch AS runner
+COPY --from=builder /tmp/lighthouse/assets/styles /assets/styles
+COPY --from=builder /tmp/lighthouse/target/release/lighthouse /
+COPY --from=builder /tmp/lighthouse/templates /templates
+CMD ["/lighthouse"]

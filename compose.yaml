@@ -1,9 +1,10 @@
+name: lighthouse
 services:
   web:
     image: anybote/lighthouse:latest
     volumes:
-      - ./assets/config:/opt/lighthouse/assets/config
-      - ./assets/img:/opt/lighthouse/assets/img
+      - ./assets/config:/assets/config
+      - ./assets/img:/assets/img
     ports: 
       - 3000:3000
   
